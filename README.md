@@ -3,7 +3,7 @@
 > for report vuetify v-data-table bug in electron-vue
 
 When using v-slot:body to repleace \<tbody\>, no-data-text and loading-text would not show anymore!    
-It is fine when on the normal browser.   
+ 
 See `src/renderer/components/LandinPage.vue` and run `npm run dev`
 
 
