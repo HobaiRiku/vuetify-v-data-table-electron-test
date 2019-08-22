@@ -11,8 +11,9 @@
      <template  v-slot:no-data>
         NO DATA HERE!
       </template>
-    <!-- no-data-text do not show !!!-->
-     <template  v-slot:body="{ items }">
+      
+    <!-- no-data-text do not show !!! beacuse body will replace all content in table-->
+     <!-- <template  v-slot:body="{ items }">
         <tbody>
           <tr v-for="item in items" :key="item.name">
             <td>{{ item.name }}</td>
@@ -23,6 +24,14 @@
             <td>CONTENT</td>
           </tr>
         </tbody>
+      </template> -->
+
+      <!-- instaed use this API will dd -->
+      <template v-slot:item.name="{ item }">
+        coustom 'name'
+      </template>
+      <template v-slot:item.protein="{ item }">
+        coustom 'protein'
       </template>
 
     </v-data-table>
@@ -34,22 +43,22 @@
 <script>
 // when items is empty
 const desserts = [
-  // {
-  //     name: 'Donut',
-  //     calories: 452,
-  //     fat: 25.0,
-  //     carbs: 51,
-  //     protein: 4.9,
-  //     iron: '22%',
-  //   },
-  //   {
-  //     name: 'KitKat',
-  //     calories: 518,
-  //     fat: 26.0,
-  //     carbs: 65,
-  //     protein: 7,
-  //     iron: '6%',
-  //   },
+  {
+      name: 'Donut',
+      calories: 452,
+      fat: 25.0,
+      carbs: 51,
+      protein: 4.9,
+      iron: '22%',
+    },
+    {
+      name: 'KitKat',
+      calories: 518,
+      fat: 26.0,
+      carbs: 65,
+      protein: 7,
+      iron: '6%',
+    },
 ];
 export default {
   name: "landing-page",
